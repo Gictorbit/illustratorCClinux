@@ -248,24 +248,3 @@ function launcher() {
 
     unset desktop_entry desktop_entry_dest launcher_path launcher_dest
 }
-
-
-#parameters [Message] [default flag [Y/N]]
-function ask_question() {
-    question_result=""
-    if [ "$2" == "Y" ];then
-        read -r -p "$1 [Y/n] " response
-        if [[ "$response" =~ $(locale noexpr) ]];then
-            question_result="no"
-        else
-            question_result="yes"
-        fi
-    elif [ "$2" == "N" ];then
-        read -r -p "$1 [N/y] " response
-        if [[ "$response" =~ $(locale yesexpr) ]];then
-            question_result="yes"
-        else
-            question_result="no"
-        fi
-    fi
-}
