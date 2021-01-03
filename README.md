@@ -8,11 +8,11 @@
 
 </div>
 
-## Illustrator CC Installer for Linux
+# Illustrator CC Installer for Linux
 This bash script helps you to install `Adobe Illustrator CC` on your Linux distro easily. It will download a free version of Illustrator and tries to run it using `wine` installed on your system
 
 ## :rocket: Features
-* photoshop commands
+* illustrator command
 * desktop entry
 * wine dark mode
 * supports graphic cards like (`intel`, `Nvidia`)
@@ -35,7 +35,7 @@ if they are not already installed you can install them using your package manage
 sudo pacman -S wine aria2
 ``` 
 3- make sure you have enough storage in your `/home` partition about `2 GiB`
-> 1 GiB will be free after installation
+> 400 MiB will be free after installation
 
 also you can install illustrator in diffrent directory
 
