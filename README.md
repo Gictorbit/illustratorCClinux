@@ -7,7 +7,7 @@ under test will be complete
 
 ```bash
 git clone https://github.com/Gictorbit/illustratorCClinux.git
-cd illustratorCClinux
+cd illustratorCClinux/scripts
 chmod +x illustratorSetup.sh
 ./illustratorSetup.sh
 ```
