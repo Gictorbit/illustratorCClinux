@@ -85,3 +85,8 @@ to uninstall illustrator you can use the uninstaller script with commands below
 chmod +x uninstaller.sh
 ./uninstaller.sh
 ```
+---
+<a href="https://poshtiban.com">
+<img src="https://raw.githubusercontent.com/Gictorbit/photoshopCClinux/master/images/poshtibancom.png" width="25%"></a> <a href="https://github.com/Gictorbit/photoshopCClinux">
+<img src="https://github.com/Gictorbit/photoshopCClinux/raw/master/images/AdobePhotoshop-icon.png" width="9%">
+</a>
