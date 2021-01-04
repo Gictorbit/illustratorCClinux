@@ -183,7 +183,8 @@ function download_component() {
             fi
         else   
             show_message "downloading $4 ..."
-            aria2c -c -x 8 -d $CACHE_PATH -o $4 $3
+            # aria2c -c -x 8 -d $CACHE_PATH -o $4 $3
+            wget $3 -P $CACHE_PATH
             if [ $? -eq 0 ];then
                 notify-send "$4 download completed" -i "download"
             fi

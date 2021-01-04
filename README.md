@@ -26,13 +26,12 @@ This bash script helps you to install `Adobe Illustrator CC` on your Linux distr
 
 2-make sure the following packages are already installed on your Linux distro
 * `wine`
-* `aria2c`
 * `md5sum`
 
 
 if they are not already installed you can install them using your package manager for example in arch Linux
 ```bash
-sudo pacman -S wine aria2
+sudo pacman -S wine
 ``` 
 3- make sure you have enough storage in your `/home` partition about `2 GiB`
 > 400 MiB will be free after installation
@@ -87,6 +86,8 @@ chmod +x uninstaller.sh
 ```
 ---
 <a href="https://poshtiban.com">
-<img src="https://raw.githubusercontent.com/Gictorbit/photoshopCClinux/master/images/poshtibancom.png" width="25%"></a> <a href="https://github.com/Gictorbit/photoshopCClinux">
+<img src="https://raw.githubusercontent.com/Gictorbit/photoshopCClinux/master/images/poshtibancom.png" width="25%"></a> 
+
+<a href="https://github.com/Gictorbit/photoshopCClinux">
 <img src="https://github.com/Gictorbit/photoshopCClinux/raw/master/images/AdobePhotoshop-icon.png" width="9%">
 </a>

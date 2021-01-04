@@ -9,7 +9,7 @@ function main() {
     setup_log "================| script executed |================"
     
     #make sure aria2c and wine package is already installed
-    package_installed aria2c
+    # package_installed aria2c
     package_installed wine
     package_installed md5sum
 
