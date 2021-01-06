@@ -102,17 +102,27 @@ function rmdir_if_exist() {
     show_message "create\033[0;36m $1\e[0m directory..."
 }
 
+#has tow mode [pkgName] [mode=summary]
 function package_installed() {
     which $1 &> /dev/null
     local pkginstalled="$?"
-    if [ "$pkginstalled" -eq 0 ];then
-        show_message "package\033[1;36m $1\e[0m is installed..."
-    else
-        warning "package\033[1;33m $1\e[0m is not installed.\nplease make sure it's already installed"
-        ask_question "would you continue?" "N"
-        if [ "$question_result" == "no" ];then
-            echo "exit..."
-            exit 5
+
+    if [ "$2" == "summary" ];then
+        if [ "$pkginstalled" -eq 0 ];then
+            echo "true"
+        else
+            echo "false"
+        fi
+    else    
+        if [ "$pkginstalled" -eq 0 ];then
+            show_message "package\033[1;36m $1\e[0m is installed..."
+        else
+            warning "package\033[1;33m $1\e[0m is not installed.\nplease make sure it's already installed"
+            ask_question "would you continue?" "N"
+            if [ "$question_result" == "no" ];then
+                echo "exit..."
+                exit 5
+            fi
         fi
     fi
 }
@@ -169,7 +179,7 @@ function set_dark_mod() {
 function download_component() {
     local tout=0
     while true;do
-        if [ $tout -ge 2 ];then
+        if [ $tout -ge 3 ];then
             error "sorry something went wrong during download $4"
         fi
         if [ -f $1 ];then
@@ -183,10 +193,21 @@ function download_component() {
             fi
         else   
             show_message "downloading $4 ..."
-            # aria2c -c -x 8 -d $CACHE_PATH -o $4 $3
-            wget $3 -P $CACHE_PATH
-            if [ $? -eq 0 ];then
-                notify-send "$4 download completed" -i "download"
+            pkgres=$(package_installed aria2c "summary")
+            if [ "$pkgres" == "true" ];then
+                show_message "using aria2c to download $4"
+                aria2c -c -x 8 -d "$CACHE_PATH" -o $4 $3
+                
+                if [ $? -eq 0 ];then
+                    notify-send "$4 download completed" -i "download"
+                fi
+            else
+                show_message "using wget to download $4"
+                wget "$3" -P "$CACHE_PATH"
+                
+                if [ $? -eq 0 ];then
+                    notify-send "$4 download completed" -i "download"
+                fi
             fi
             ((tout++))
         fi
