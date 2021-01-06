@@ -1,0 +1,19 @@
+
+                     ┏━━━━━━━━━━━━━━━━━━━━━━━━━┫ Illustrator CC Installer ┣━━━━━━━━━━━━━━━━━━━━━━━━┓
+                     ┃                                                                             ┃
+  ███████████████████████████                                                                      ┃
+  ██                       ██        1- Install Illustrator CC            (reinstall/repair)       ┃
+  ██          ▟████ ▟█▙    ██                                                                      ┃
+  ██         ▟█████ ▜█▛    ██        2- reset Illustrator                  (reset settings)        ┃
+  ██        ▟██████        ██                                                                      ┃
+  ██       ▟██▛ ███ ███    ██        3- configure virtual drive               (winecfg)            ┃
+  ██      ▟██▛  ███ ███    ██                                                                      ┃
+  ██     ▟██▛   ███ ███    ██        4- uninstall Illustrator                                      ┃
+  ██    ▟██████████ ███    ██                                                                      ┃
+  ██   ▟██▛     ███ ███    ██        5- exit                                                       ┃
+  ██                       ██                                                                      ┃
+  ███████████████████████████                                                                      ┃
+                      ┃                                                                            ┃
+                      ┗━━━━━━━━━━━━┫ https://github.com/Gictorbit/illustratorCClinux ┣━━━━━━━━━━━━━┛
+                      
+                    

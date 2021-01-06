@@ -47,18 +47,24 @@ the installer scripts use a virtual drive of wine and makes a new `winprefix` fo
 first of all, you need to clone the repository with this command:
 ```bash
 git clone https://github.com/Gictorbit/illustratorCClinux.git
-cd illustratorCClinux/scripts
+cd illustratorCClinux
+chmod +x setup.sh
+./setup.sh
 ```
-then you can easily run `illustratorSetup.sh` script to install illustrator cc on your Linux distro
+then you can easily run `setup.sh` script to install illustrator cc on your Linux distro
 
-```bash
-chmod +x illustratorSetup.sh
-./illustratorSetup.sh
-```
+<div align="center" class="tip" markdown="1" style>
+
+![setup screenshot](images/setup-screenshot.png)
+
+</div>
 
 you can use `-d` to specify the installation path, and `-c` for the cache directory.
 for example:
+
 ```bash
+cd scripts
+chmod +x illustratorSetup.sh
 ./illustratorSetup.sh -d /mnt/storage/illustratorSetup.sh
 ```
 or with c flag

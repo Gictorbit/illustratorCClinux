@@ -1,7 +1,3 @@
-update readme
-add if exist to save_path and load_path functions
-add reset illustrator option
-add setup.sh script
 add shared wine virtual drive with photoshop on one machine
 add link mirror in json file
-
+loadpath function enhancement check if file exist
