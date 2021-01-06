@@ -13,7 +13,6 @@ function main() {
 
     1)  
         echo "run illustrator CC Installation..."
-        echo -n "using winetricks for component installation..."
         run_script "scripts/illustratorSetup.sh" "illustratorSetup.sh"
         ;;
     2)  
