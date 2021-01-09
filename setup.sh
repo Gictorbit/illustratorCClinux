@@ -12,7 +12,7 @@ function main() {
     case "$answer" in
 
     1)  
-        echo "run illustrator CC Installation..."
+        echo -n "run illustrator CC Installation..."
         run_script "scripts/illustratorSetup.sh" "illustratorSetup.sh"
         ;;
     2)  
@@ -20,7 +20,7 @@ function main() {
         run_script "scripts/resetIllustrator.sh" "resetIllustrator.sh"
         ;;
     3)  
-        echo "run winecfg..."
+        echo "runing winecfg"
         echo -n "open virtualdrive configuration..."
         run_script "scripts/winecfg.sh" "winecfg.sh"
         ;;
