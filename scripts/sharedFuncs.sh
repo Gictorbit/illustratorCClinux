@@ -199,25 +199,23 @@ function download_component() {
             if [ "$ariapkg" == "true" ];then
                 show_message "using aria2c to download $4"
                 aria2c -c -x 8 -d "$CACHE_PATH" -o $4 $3
-                
-                if [ $? -eq 0 ];then
-                    notify-send "$4 download completed" -i "download"
-                fi
+                downrez=$?
 
             elif [ "$curlpkg" == "true" ];then
                 show_message "using curl to download $4"
                 curl $3 -o $1
+                downrez=$?
             else
                 show_message "using wget to download $4"
                 wget "$3" -P "$CACHE_PATH"
-                
-                if [ $? -eq 0 ];then
-                    notify-send "$4 download completed" -i "download"
-                fi
+                downrez=$?
+            fi
+            if [ "$downrez" -eq 0 ];then
+                notify-send "Illustrator CC" "$4 download completed" -i "download"
             fi
             ((tout++))
         fi
-    done    
+    done
 }
 
 function launcher() {

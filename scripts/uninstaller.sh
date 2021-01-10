@@ -7,7 +7,7 @@ main() {
     CMD_PATH="/usr/local/bin/illustrator"
     ENTRY_PATH="/home/$USER/.local/share/applications/illustratorCC.desktop"
     
-    notify-send "illustrator uninstaller started" -i "inkscape"
+    notify-send "Illustrator CC" "illustrator uninstaller started" -i "inkscape"
 
     ask_question "you are uninstalling illustrator cc are you sure?" "N"
     if [ $result == "no" ];then

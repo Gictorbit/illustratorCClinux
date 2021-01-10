@@ -4,7 +4,7 @@ if [ $# -ne 0 ];then
     exit 1
 fi
 
-notify-send "Illustrator CC started." -i "illustratoricon"
+notify-send "Illustrator CC" "Illustrator CC launched." -i "illustratoricon"
 
 SCR_PATH="aipath"
 CACHE_PATH="aicache"
