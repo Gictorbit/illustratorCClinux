@@ -26,12 +26,14 @@ This bash script helps you to install `Adobe Illustrator CC` on your Linux distr
 
 2-make sure the following packages are already installed on your Linux distro
 * `wine`
-* `md5sum`
+* `md5sum (coreutils)`
+* `libnotify`
 
-
-if they are not already installed you can install them using your package manager for example in arch Linux
+if they are not already installed you can install them using your package manager
 ```bash
-sudo pacman -S wine
+sudo pacman -S wine coreutils libnotify       #Arch and derivatives
+sudo apt install wine coreutils libnotify-bin #Debian/Ubuntu and derivatives
+sudo dnf install wine coreutils libnotify     #Fedora/Redhat and derivatives
 ``` 
 3- make sure you have enough storage in your `/home` partition about `2 GiB`
 > 400 MiB will be free after installation
