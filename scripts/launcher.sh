@@ -13,6 +13,6 @@ WINE_PREFIX="$SCR_PATH/prefix"
  
 export WINEPREFIX="$WINE_PREFIX"
 
-wine "$SCR_PATH/IllustratorCC17/IllustratorCC64.exe"
+wine64 "$SCR_PATH/IllustratorCC17/IllustratorCC64.exe"
 
 
