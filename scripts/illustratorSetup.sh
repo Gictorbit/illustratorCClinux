@@ -32,6 +32,8 @@ function main() {
         error "prefix config failed :("
     fi
     
+    sleep 10
+    
     if [ -f "$WINE_PREFIX/user.reg" ];then
         #add dark mod
         set_dark_mod
@@ -42,7 +44,7 @@ function main() {
     #create resources directory we extract downloaded file into this and will be deleted after installation more like /tmp
     rmdir_if_exist $RESOURCES_PATH
 
-    #install photoshop
+    #install illustrator
     sleep 3
     install_illustratorCC
     sleep 5
