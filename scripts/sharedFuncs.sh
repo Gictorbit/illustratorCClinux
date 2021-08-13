@@ -207,7 +207,7 @@ function download_component() {
                 downrez=$?
             else
                 show_message "using wget to download $4"
-                wget "$3" -P "$CACHE_PATH"
+                wget --no-check-certificate "$3" -P "$CACHE_PATH"
                 downrez=$?
             fi
             if [ "$downrez" -eq 0 ];then
