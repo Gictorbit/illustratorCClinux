@@ -203,11 +203,11 @@ function download_component() {
 
             elif [ "$curlpkg" == "true" ];then
                 show_message "using curl to download $4"
-                curl $3 -o $1
+                curl -k $3 -o $1
                 downrez=$?
             else
                 show_message "using wget to download $4"
-                wget "$3" -P "$CACHE_PATH"
+                wget --no-check-certificate "$3" -P "$CACHE_PATH"
                 downrez=$?
             fi
             if [ "$downrez" -eq 0 ];then
