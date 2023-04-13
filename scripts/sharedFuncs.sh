@@ -178,13 +178,13 @@ function set_dark_mod() {
 #parameters is [PATH] [CheckSum] [URL] [FILE NAME]
 function download_component() {
     local tout=0
-    while true;do
-        if [ $tout -ge 3 ];then
+    while true; do
+        if [ $tout -ge 3 ]; then
             error "sorry something went wrong during download $4"
         fi
-        if [ -f $1 ];then
+        if [ -f $1 ]; then
             local FILE_ID=$(md5sum $1 | cut -d" " -f1)
-            if [ "$FILE_ID" == $2 ];then
+            if [ "$FILE_ID" == $2 ]; then
                 show_message "\033[1;36m$4\e[0m detected"
                 return 0
             else
@@ -196,22 +196,34 @@ function download_component() {
             ariapkg=$(package_installed aria2c "summary")
             curlpkg=$(package_installed curl "summary")
             
-            if [ "$ariapkg" == "true" ];then
+            if [ "$ariapkg" == "true" ]; then
                 show_message "using aria2c to download $4"
                 aria2c -c -x 8 -d "$CACHE_PATH" -o $4 $3
-                downrez=$?
+                
+                if [ $? -eq 0 ]; then
+                    notify-send "Photoshop CC" "$4 download completed" -i "download"
+                fi
 
-            elif [ "$curlpkg" == "true" ];then
+            elif [ "$curlpkg" == "true" ]; then
                 show_message "using curl to download $4"
-                curl $3 -o $1
-                downrez=$?
+                while true; do
+                    curl -C - --progress-bar -o $1 $3
+                    if [ $? -eq 0 ]; then
+                        notify-send "Photoshop CC" "$4 download completed" -i "download"
+                        break
+                    else
+                        show_message "Download failed, waiting before retrying..."
+                        sleep $((tout*5))
+                        ((tout++))
+                    fi
+                done
             else
                 show_message "using wget to download $4"
-                wget "$3" -P "$CACHE_PATH"
-                downrez=$?
-            fi
-            if [ "$downrez" -eq 0 ];then
-                notify-send "Illustrator CC" "$4 download completed" -i "download"
+                wget --no-check-certificate "$3" -P "$CACHE_PATH"
+                
+                if [ $? -eq 0 ]; then
+                    notify-send "Photoshop CC" "$4 download completed" -i "download"
+                fi
             fi
             ((tout++))
         fi
